@@ -5,11 +5,11 @@ class Node(object):
 
     __node_count = 0
 
-    def __init__(self,data,type):
+    def __init__(self,data,gtype):
         self.data = {}
         for key in data:
             self.data[key] = data[key]
-        self.type = type
+        self.type = gtype
         Node.__node_count += 1
     
     def __str__(self):
