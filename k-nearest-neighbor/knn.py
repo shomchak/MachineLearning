@@ -18,9 +18,7 @@ class Node(object):
     __node_count = 0
 
     def __init__(self,data,gtype=None):
-        self.data = {}
-        for key in data:
-            self.data[key] = data[key]
+        self.data = data.copy()
         self.type = gtype
         Node.__node_count += 1
     
@@ -55,7 +53,6 @@ class NodeList(object):
         if len(self.nodes) == 0:
             print "List contains no nodes."
             return
-        
         for p in self.parameters:
             p_min = self.nodes[0].data[p]
             p_max = self.nodes[0].data[p]
