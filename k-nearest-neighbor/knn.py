@@ -109,8 +109,12 @@ class NodeList(object):
 def makeNodeList(data):
     myList = NodeList()
     for element in data:
-        node_data = {'rooms':element['rooms'],'area':element['area']}
-        node_type = element['type']
+        node_data = {}
+        for parameter in element.keys():
+            if parameter != 'type':
+                node_data[parameter]=element[parameter]
+            else:
+                node_type = element[parameter]
         myList.addNode(Node(node_data,node_type))
     return myList
 
